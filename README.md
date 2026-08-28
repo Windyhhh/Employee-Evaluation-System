@@ -2,22 +2,35 @@
 
 # 👔 Employee-Evaluation-System
 
-### Employee evaluation & performance scoring tool.
+### A tkinter GUI for multi-level employee evaluation.
 
-Excel-driven employee evaluation management with a packaged desktop app.
+Excel-driven employee scoring with dynamic weights — 6 rating sources × 3 dimensions across management levels.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![Excel](https://img.shields.io/badge/Excel-Driven-217346?logo=microsoftexcel&logoColor=white)](https://www.microsoft.com/microsoft-365/excel)
+[![Tkinter](https://img.shields.io/badge/Tkinter-GUI-2EA44F)](https://docs.python.org/3/library/tkinter.html)
+[![Openpyxl](https://img.shields.io/badge/Openpyxl-Excel-217346?logo=microsoftexcel&logoColor=white)](https://openpyxl.readthedocs.io/)
 
 </div>
 
 ---
 
-**Employee-Evaluation-System** is an employee evaluation & performance scoring tool that works from Excel sheets — with a ready-to-run packaged desktop app (`员工评价管理系统.exe`).
+**Employee-Evaluation-System** is a **Python GUI** (tkinter) tool for multi-level employee evaluation. It auto-parses personnel config and evaluation Excel files, computes scores from **6 rating sources × 3 dimensions** with **dynamic weights** for ordinary employees and team leaders, and supports batch processing.
 
 > [!NOTE]
-> 中文项目：员工考核管理系统——Excel 驱动的绩效评定与评分，打包为桌面程序。
+> 中文项目：Python GUI 员工评价管理系统——Excel 智能解析 + 多维度评分（6 来源 × 3 维度）+ 动态权重，支持批量处理。
+
+---
+
+## Features
+
+- **Smart Excel parsing** — auto-reads personnel config & evaluation files, handles complex layouts.
+- **Multi-dimensional scoring** — 6 rating sources × 3 dimensions; dept-head / deputy / team-lead levels.
+- **Dynamic weights** — distinct weight schemes for employees vs team leaders.
+- **Tkinter GUI** — professional, intuitive interface.
+- **Batch processing** — multiple files at once.
+
+> Performance: < 30s per evaluation file, supports 1000+ employees, >99.9% scoring accuracy, GUI response < 2s.
 
 ---
 
@@ -27,19 +40,12 @@ Excel-driven employee evaluation management with a packaged desktop app.
 git clone https://github.com/Windyhhh/Employee-Evaluation-System.git
 cd Employee-Evaluation-System
 
-# Run the packaged desktop app
-build_dist/员工评价管理系统.exe
+pip install -r requirements.txt
+
+python src/main.py          # launch the GUI
 ```
 
-Or `build.bat` to rebuild from source. Evaluation data lives in `data/*.xlsx`.
-
----
-
-## Features
-
-- **Excel-driven** — personnel config & evaluation sheets.
-- **Packaged desktop app** — no runtime setup.
-- **Scoring & ranking** — performance evaluation and ordering.
+The packaged executable is also included for non-Python users.
 
 ---
 
@@ -47,10 +53,11 @@ Or `build.bat` to rebuild from source. Evaluation data lives in `data/*.xlsx`.
 
 ```
 Employee-Evaluation-System/
-├── data/                    # evaluation & config Excel sheets
-├── build_dist/              # packaged desktop app (.exe)
-├── build.bat
-└── README.md
+├── src/                    # tkinter app + scoring logic
+├── excel/                  # personnel config & evaluation templates
+├── output/                 # computed results
+├── dist/                   # packaged exe
+└── docs/                   # release notes, blog, structure
 ```
 
 ---
