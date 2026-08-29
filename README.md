@@ -1,6 +1,6 @@
 <div align="center">
 
-# 👔 Employee-Evaluation-System
+# 员工评价系统 | Employee-Evaluation-System
 
 ### A tkinter GUI for multi-level employee evaluation.
 
